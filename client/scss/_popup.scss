@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
+
+.popup {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: fixed;
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+	top: 0;
+	left: 0;
+	display: none;
+	// .popup-close
+	&-close {
+		cursor: pointer;
+	}
+	// .popup-wrapper
+	&-wrapper {
+		width: 677px;
+		height: 488px;
+		position: relative;
+		padding-top: 65px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	// .popup-btn
+	&-btn {
+		position: absolute;
+		background-color: #141120;
+		width: 48px;
+		height: 48px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		align-self: center;
+		border-radius: 100%;
+		top: 0;
+		right: 0;
+		img {
+			width: 14px;
+			height: 14px;
+		}
+	}
+	// .popup-content
+	&-content {
+		background-color: #141120;
+		color: #fff;
+		padding: 50px;
+		padding-right: 120px;
+		border-radius: 22px;
+		// .popup-content__title
+		&__title {
+			font-family: "Montserrat", sans-serif;
+			font-weight: 700;
+			font-size: 48px;
+			line-height: 92%;
+			margin-top: 50px;
+			margin-bottom: 12px;
+		}
+		// .popup-content__description
+		&__description {
+			font-weight: 400;
+			font-size: 24px;
+			line-height: 120%;
+			color: rgba(255, 255, 255, 0.8);
+			margin-bottom: 45px;
+		}
+		// .popup-content__time
+		&__time {
+			font-style: italic;
+			font-weight: 400;
+			font-size: 24px;
+			line-height: 29px;
+			opacity: 0.5;
+		}
+		// .popup-content__btn
+		&__btn {
+			margin-top: 50px;
+			font-weight: 700;
+			font-size: 20px;
+			line-height: 24px;
+			text-align: center;
+			padding: 23px 105px;
+			background: #5604c8;
+			border-radius: 57px;
+			max-width: 40%;
+		}
+	}
+	&.open {
+		display: block;
+	}
+}
+
+@media (max-width: 576px) {
+	.popup {
+		// .popup-wrapper
+		&-wrapper {
+			width: 280px;
+			height: 488px;
+			position: relative;
+			padding-top: 25px;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		// .popup-content
+		&-content {
+			padding: 10px;
+			padding-right: 30px;
+			// .popup-content__title
+			&__title {
+				font-size: 23px;
+				margin-top: 20px;
+				margin-bottom: 12px;
+			}
+			// .popup-content__description
+			&__description {
+				font-size: 18px;
+				margin-bottom: 15px;
+			}
+			// .popup-content__time
+			&__time {
+				font-size: 18px;
+				line-height: 22px;
+				opacity: 0.5;
+			}
+			// .popup-content__btn
+			&__btn {
+				margin-top: 20px;
+				font-size: 18px;
+				line-height: 22px;
+				padding: 13px 30px;
+				max-width: 100%;
+			}
+		}
+	}
+}

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/client/css/rSlider.min.css">
+	<link rel="stylesheet" href="/client/css/style.css">
+	<title>Студия Motion Capture. Захват движения и анимация персонажей MocapMESO</title>
+	<meta name="description"
+		content="Анимации доступные каждому! Motion Capture студия. Удаленная запись, актеры, и инвентарь. Запись лица, тела, ретаргет и чистка анимаций.">
+	<meta name="keywords" content="motion capture, mocap, мокап, захват движения">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+	<link rel="icon" href="/client/favicon.ico">
+	<link rel="apple-touch-icon" href="/client/images/fav/favicon192.png">
+	<link rel="manifest" href="/client/manifest.webmanifest">
+</head>
+
+<body>
+	<div class="header-nav__hidden"></div>
+	<header class="header-nav">
+		<div class="container">
+			<div class="wrapper">
+				<a class="logo" href="/">
+					<img src="/client/images/png/logo.png" alt="Логотип" loading="lazy">
+				</a>
+				<button class="header-nav__toggle active">
+					<img src="/client/images/icons/header-burger__icon.svg" alt="четыре белых кружочка" loading="lazy">
+				</button>
+				<ul class="nav-list">
+					<li class="nav-list__item nav-list__item--active">
+						<a href="/">главная</a>
+					</li>
+					<li class="nav-list__item">
+						<a href="/#two">особенности</a>
+					</li>
+					<li class="nav-list__item">
+						<a href="/#command">наша команда</a>
+					</li>
+					<li class="nav-list__item">
+						<a href="/blogs">блог</a>
+					</li>
+					<li class="nav-list__item">
+						<a href="#calc">калькулятор</a>
+					</li>
+					<li class="nav-list__item">
+						<a href="#contact">контакты</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<main class="home">
+		<div class="retarget home-baner">
+			<div class="container">
+				<div class="wrapper">
+					<div class="home-baner__text">
+						<h1>
+							Motion Capture <br> для всех и каждого
+						</h1>
+						<p>
+							Вдохните жизнь в своих персонажей вместе с нами!
+						</p>
+						<div class="btn-group">
+							<a href="#calc" class="btn btn-violet">Расчитать</a>
+							<a class="btn-gray__wrapper" href="#two">
+								<span class="btn btn-gray">Узнать больше</span>
+							</a>
+						</div>
+					</div>
+					</div>
+					</div>
+		</div>
+		<div class="home-character" id="two">
+			<div class="container">
+				<h2>
+					Персонаж оживает на глазах <br>
+					при помощи наших инструментов
+				</h2>
+				<div class="wrapper">
+					<div class="col">
+						<div class="home-card home-card--one wrapper">
+							<div class="col col--one">
+								<h3>Запись лица</h3>
+								<a href="/face" class="btn btn-violet btn-violet--circle">
+									<svg class="icon">
+										<use href="/client/images/sprites/icons.svg#arrow"></use>
+									</svg>
+								</a>
+							</div>
+							<div class="col">
+								<div class="home-card__computer">
+									<video src="/client/videos/home-face.webm" autoplay muted loop></video>
+								</div>
+								<div class="home-card__phone">
+									<video src="/client/videos/arnold.mp4" loop autoplay muted></video>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="home-card wrapper">
+							<div class="col col--one">
+								<h3>Запись тела</h3>
+								<a href="/body" class="btn btn-violet btn-violet--circle">
+									<svg class="icon">
+										<use href="/client/images/sprites/icons.svg#arrow"></use>
+									</svg>
+								</a>
+							</div>
+							<div class="col">
+								<svg width="0" height="0" xmlns="http://www.w3.org/2000/svg">
+									<defs>
+										<clipPath id="mask-polina">
+											<path
+												d="M214.865 114.438C214.861 114.434 214.861 114.427 214.865 114.423L319.037 10.2513C332.705 -3.41709 354.866 -3.41709 368.534 10.2513L413.154 54.8716C413.155 54.8721 413.156 54.8721 413.156 54.8716C413.157 54.8711 413.158 54.8711 413.158 54.8716L675.341 317.054C689.009 330.723 689.009 352.883 675.341 366.552L587.997 453.896C574.328 467.564 552.168 467.564 538.499 453.896L477.074 392.471C463.406 378.802 441.245 378.802 427.577 392.471L365.595 454.453C351.926 468.121 329.765 468.121 316.097 454.453L256.09 394.445C242.421 380.777 220.26 380.777 206.592 394.445L146.585 454.452C132.917 468.121 110.756 468.121 97.0875 454.452L10.7252 368.09C-2.94318 354.422 -2.94318 332.261 10.7252 318.593L214.865 114.453C214.869 114.449 214.869 114.442 214.865 114.438Z"
+												fill="#9E00FF" />
+										</clipPath>
+									</defs>
+								</svg>
+								<div class="mocap-mask">
+									<video src="/client/videos/polina_prised.webm" autoplay muted loop></video>
+								</div>
+							</div>
+						</div>
+						<div class="home-card wrapper">
+							<div class="col col--one">
+								<h3>Ретаргет и чистка</h3>
+								<a href="/retarget" class="btn btn-violet btn-violet--circle">
+									<svg class="icon">
+										<use href="/client/images/sprites/icons.svg#arrow"></use>
+									</svg>
+								</a>
+							</div>
+							<div class="col">
+								<div class="mask">
+									<video src="/client/videos/character-animation.webm" autoplay muted loop></video>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="home-slider">
+			<div class="container">
+
+				<div class="swiper home-swiper">
+					<!-- Additional required wrapper -->
+					<div class="swiper-wrapper">
+						<!-- Slides -->
+						<div class="swiper-slide">
+							<div class="home-slide home-slide--remote">
+								<div class="video">
+									<video src="/client/videos/geo.webm" muted autoplay loop></video>
+								</div>
+								<div class="wrapper">
+									<div class="col">
+										<div class="home-slide__title">Можем все и сразу.</div>
+										<div class="home-slide__description">
+											<h2>Удаленная запись</h2>
+											<p>Беспроводная система захвата движений позволяет нам помочь вам где
+												угодно!
+											</p>
+										</div>
+										</div>
+											</div>
+											</div>
+											</div>
+											<div class="swiper-slide">
+												<div class="home-slide">
+													<div class="video">
+									<img src="/client/images/png/home-polina.png" loading="lazy" alt="Фото актрисы">
+									</div>
+									<div class="wrapper">
+										<div class="col">
+											<div class="home-slide__title">Можем все и сразу.</div>
+											<div class="home-slide__description">
+												<h2>Актриса</h2>
+											<p>Беспроводная система захвата движений позволяет нам помочь вам где
+												угодно!
+											</p>
+										</div>
+										</div>
+											</div>
+											</div>
+											</div>
+											<div class="swiper-slide">
+												<div class="home-slide home-slide--stock">
+													<div class="video">
+									<img src="/client/images/png/home-men.png" loading="lazy" alt="Фото актера с мечом">
+									</div>
+									<div class="wrapper">
+										<div class="col">
+											<div class="home-slide__title">Можем все и сразу.</div>
+											<div class="home-slide__description">
+												<h2>Инвентарь</h2>
+											<p>Беспроводная система захвата движений позволяет нам помочь вам где
+												угодно!
+											</p>
+										</div>
+										</div>
+											</div>
+											</div>
+											</div>
+											</div>
+					<div class="swiper-pagination"></div>
+					</div>
+					</div>
+					</div>
+					<div class="home-help">
+						<div class="container">
+							<div class="home-help__title">
+								<h2>Нужна помощь с проектом?</h2>
+								<p>Собственная CGI студия позволяет нам помочь вам в реализации ваших идей!</p>
+							</div>
+							<div class="home-help__preview">
+								<svg width="0" height="0" xmlns="http://www.w3.org/2000/svg">
+									<defs>
+										<clipPath id="mask-help">
+											<path fill-rule="evenodd" clip-rule="evenodd"
+												d="M225 1.68713e-05C190.206 1.76321e-05 162 28.2061 162 63V129C162 163.794 133.794 192 99 192H63C28.2061 192 -7.60085e-07 220.206 0 255L6.3133e-06 544C7.07339e-06 578.794 28.2061 607 63 607H926.189C947.071 607 964 623.929 964 644.811C964 665.694 980.929 682.622 1001.81 682.622H1617.46C1652.25 682.622 1680.46 654.416 1680.46 619.622V361C1680.46 326.206 1652.25 298 1617.46 298H1122.57C1087.78 298 1059.57 269.794 1059.57 235V63C1059.57 28.2061 1031.37 -7.60806e-07 996.574 0L225 1.68713e-05Z"
+												fill="#06040E" />
+										</clipPath>
+									</defs>
+								</svg>
+					<!--<img src="/client/videos/home-help.gif" alt="анимация персонажей">-->
+					<video src="/client/videos/jugg_1.mp4" muted loop autoplay></video>
+					</div>
+					<div class="home-help__btn">
+						<a href="https://www.movie-studio.net/" target="_blank" class="btn btn-violet">Узнать больше</a>
+					</div>
+					</div>
+					</div>
+					<div class="home-command" id="command">
+						<div class="container">
+							<h2>Наша команда</h2>
+							<div class="wrapper">
+								<div class="col">
+									<div class="home-command__card">
+										<div class="card-header bottom-right">
+								<img src="/client/images/png/ceo.png" loading="lazy" alt="Анатолий Парахин">
+								</div>
+								<div class="card-body">
+									<h3>Анатолий Парахин</h3>
+								</div>
+								<div class="card-footer">
+									<h4>CEO</h4>
+									<p>считает деньги, <br>
+										иногда дает на еду
+									</p>
+								</div>
+								</div>
+								</div>
+								<div class="col">
+									<div class="home-command__card">
+										<div class="card-header top-right">
+								<img src="/client/images/png/3D.png" loading="lazy" alt="Данил Насибулин">
+								</div>
+								<div class="card-body">
+									<h3>Данил Насибулин</h3>
+								</div>
+								<div class="card-footer">
+									<h4>3D specialist</h4>
+									<p>делает 99% работы</p>
+								</div>
+								</div>
+								</div>
+								<div class="col">
+									<div class="home-command__card">
+										<div class="card-header circle">
+								<img src="/client/images/png/creative.png" loading="lazy" alt="Кирилл Агафонов">
+								</div>
+								<div class="card-body">
+									<h3>Кирилл Агафонов</h3>
+								</div>
+								<div class="card-footer">
+									<h4>Creative director</h4>
+									<p>Шарит за мемы</p>
+								</div>
+								</div>
+								</div>
+								<div class="col">
+									<div class="home-command__card">
+										<div class="card-header bottom-left">
+								<img src="/client/images/png/table.png" loading="lazy" alt="Евгений Черников">
+								</div>
+								<div class="card-body">
+									<h3>Евгений Черников</h3>
+								</div>
+								<div class="card-footer">
+									<h4>Table manager</h4>
+									<p>Протирает столы, ибо они его</p>
+								</div>
+								</div>
+								</div>
+								</div>
+								</div>
+								</div>
+		<div class="home-last">
+			<div class="container">
+				<h2>Последнее в блоге</h2>
+				<ul class="list-posters"></ul>
+				<div class="wrapper">
+					<a href="/blogs" class="btn-gray__wrapper">
+						<span class="btn btn-gray">все статьи</span>
+					</a>
+				</div>
+			</div>
+			</div>
+		<div class="calculator" id="calc">
+			<div class="container">
+				<input type="hidden" id="calc-result" data-result-post="body" data-result-type="offline" data-count
+					data-result-retarget>
+				<div class="wrapper">
+					<div class="calculator-top-mobile prise">
+						<p>Калькулятор</p>
+						<input type="text" placeholder="Посчитай свою цену" disabled>
+					</div>
+					<div class="prise prise__desktop">
+						<p>Калькулятор</p>
+						<input type="number" placeholder="Посчитай свою цену" disabled>
+						<p class="total">Итого:
+							<span>0&#8381;</span>
+						</p>
+						<a class="btn btn-violet" href="#contact">оставить заявку</a>
+					</div>
+					<div class="col">
+						<div class="recording">
+							<p>Запись</p>
+							<div class="customs">
+								<div class="custom">
+									<label class="label">
+										<input class="custom-radio custom-radio--remote" type="radio" name="type" data-result-type="remote">
+										<span class="custom-radio__btn"></span>
+										Удаленная запись
+									</label>
+								</div>
+								<div class="custom">
+									<label class="label label-off">
+										<input class="custom-radio custom-radio--offline" type="radio" name="type" data-result-type="offline" checked>
+										<span class="custom-radio__btn"></span>
+										Офлайн
+										</label>
+										</div>
+										</div>
+										<p>Кол-во часов записи</p>
+										<input type="text" id="sampleSlider" class="sampleSlider">
+										</div>
+										<div class="additional">
+											<p>Что записываем?</p>
+											<div class="customs">
+												<div class="custom custom-two">
+													<label class="label">
+										<input class="custom-radio custom-radio--body" type="checkbox" name="body" data-result-post="body" checked>
+										<span class="custom-radio__btn"></span>
+										Тело
+									</label>
+								</div>
+								<div class="custom">
+									<label class="label">
+										<input class="custom-radio custom-radio--face" type="checkbox" name="body" data-result-post="face">
+										<span class="custom-radio__btn"></span>
+										Лицо
+									</label>
+								</div>
+								</div>
+								<p>Дополнительно</p>
+								<div class="custom custom-mt">
+									<label class="label label-retarget">
+										<input class="custom-radio custom-radio--retarget" type="checkbox" name="retarget">
+										<span class="custom-radio__btn"></span>
+										Нужен ретаргет
+									</label>
+								</div>
+								</div>
+								</div>
+								</div>
+								</div>
+								</div>
+		<div class="contact" id="contact">
+			<div class="container">
+				<div class="wrapper">
+					<div class="popup">
+						<div class="popup-wrapper">
+							<div class="popup-btn popup-close"><img src="/client/images/icons/popup-close.svg" loading="lazy" alt="">
+							</div>
+							<div class="popup-content">
+								<div class="popup-content__title">Спасибо за заявку!</div>
+								<div class="popup-content__description">Мы свяжемся с вами в рабочее время и поможем реализовать вашу
+									идею!</div>
+								<time class="popup-content__time">ПН-ПТ с 12:00 до 18:00</time>
+								<div class="popup-content__btn popup-close">ОК, БУДУ ЖДАТЬ</div>
+							</div>
+						</div>
+					</div>
+					<address class="contact-info">
+						<p>Телефон</p>
+						<a href="tel:+78008882002">8 (800) 888-20-02</a>
+						<p>Email</p>
+						<a href="mailto:info@mocapmeso.com">info@mocapmeso.com</a>
+						<ul class="list">
+							<li class="list-item list-item_twitter">
+								<a class="social" target="_blank" href="https://twitter.com/moviestudio_off">
+									<img src="/client/images/icons/twitter.svg" loading="lazy" alt="иконка">
+								</a>
+							</li>
+							<li class="list-item list-item_vk">
+								<a class="social" target="_blank" href="https://vk.com/movie_studio_official">
+									<img src="/client/images/icons/ivk.svg" alt="иконка" loading="lazy">
+								</a>
+							</li>
+							<li class="list-item list-item_yt">
+								<a class="social" target="_blank" href="https://www.youtube.com/channel/UC6tD9R5p32N46gYSF0ZHR1Q?sub_confirmation=1">
+									<img src="/client/images/icons/yt.svg" alt="иконка" loading="lazy">
+								</a>
+							</li>
+							<li class="list-item list-item_insta">
+								<a class="social" target="_blank" href="https://www.instagram.com/moviestudio_official/">
+									<img src="/client/images/icons/insta.svg" alt="иконка" loading="lazy">
+								</a>
+							</li>
+							<li class="list-item list-item_facebook">
+								<a class="social" target="_blank" href="https://www.facebook.com/meso.moviestudio">
+									<img src="/client/images/icons/facebook.svg" alt="иконка" loading="lazy">
+								</a>
+							</li>
+							</ul>
+							</address>
+							<div class="contact-input">
+								<input class="input" type="text" placeholder="Ваше имя">
+								<input class="input" type="text" placeholder="Ваш email">
+								<input class="input" type="text" placeholder="Номер телефона">
+								<div>
+							<button class="btn btn-violet contact-btn">отправить</button>
+							<span>Мы с вами свяжемся <br>
+								в рабочее время</span>
+						</div>
+						</div>
+						</div>
+						</div>
+			<a class="btn btn-up" href="#">
+				<img src="/client/images/icons/vector-up.svg" loading="lazy" alt="стрелка вверх">
+			</a>
+		</div>
+	</main>
+	<footer class="footer">
+		<div class="container">
+			<div class="wrapper">
+				<ul>
+					<li>
+						<span>+12</span>
+					</li>
+					<li class="footer-info">
+						MOCAPMESO 2022© <br>
+						Сайт доступен от 12-ти лет.
+					</li>
+					<li>
+						Все авторские права и торговые марки принадлежат <br>
+						соответствующим владельцам. Privacy Policy
+					</li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+	<script src="/client/js/rSlider.min.js"></script>
+	<script src="/client/js/app.js"></script>
+	<script src="/client/js/calc.js"></script>
+	<script type="module" src="/client/js/swiper.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ui-kit</title>
+	<link rel="stylesheet" href="/client/css/rSlider.min.css">
+	<link rel="stylesheet" href="/client/css/style.css">
+</head>
+
+<body style="padding: 200px 100px;">
+	<div class="logo">
+		<a href="#">
+			<img src="/client/images/png/logo.png" alt="Логотип">
+		</a>
+	</div>
+	<button class="btn btn-violet">ОБЫЧНОЕ</button>
+	<button class="btn btn-violet" disabled>НЕДОСТУПНО</button>
+	<a class="btn-gray__wrapper">
+		<span class="btn btn-gray">УЗНАТЬ БОЛЬШЕ</span>
+	</a>
+	<button class="btn btn-gray" disabled>УЗНАТЬ БОЛЬШЕ</button>
+	<button class="btn btn-violet btn-violet--circle">
+		<svg class="icon">
+			<use href="/client/images/sprites/icons.svg#arrow"></use>
+		</svg>
+	</button>
+	<button class="btn btn-violet btn-violet--circle" disabled>
+		<svg class="icon">
+			<use href="/client/images/sprites/icons.svg#arrow"></use>
+		</svg>
+	</button>
+	<button class="btn btn-clean"> <span>01</span> Удаленная запись</button>
+	<button class="btn btn-clean btn-actors"> <span>02</span> Актеры</button>
+	<div class="custom">
+		<label class="label">
+			<input class="custom-radio" type="radio" name="radio">
+			<span class="custom-radio__btn"></span>			
+			Выбрать
+		</label>
+	</div>
+	<div class="custom">
+		<label class="label">
+			<input class="custom-radio custom-radio--disabled" type="radio" name="radio" disabled>
+			<span class="custom-radio__btn"></span>
+			Недоступно
+		</label>
+	</div>
+	<input class="input" type="text" placeholder="Введите текст">
+	<input class="input" type="text" placeholder="Поле недоступно" disabled>
+	<div class="header-nav" style="margin-bottom: 50px;">
+		<div class="container">
+			<div class="wrapper">
+				<ul class="nav-list">
+					<li class="nav-list__item">
+						<a href="#">главная</a>
+					</li>
+					<li class="nav-list__item">
+						<a href="#">особенности</a>
+					</li>
+					<li class="nav-list__item">
+						<a href="#">наша команда</a>
+					</li>
+					<li class="nav-list__item nav-list__item--active">
+						<a href="#">блог</a>
+					</li>
+					<li class="nav-list__item">
+						<a href="#">калькулятор</a>
+					</li>
+					<li class="nav-list__item">
+						<a href="#">контакты</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<input type="text" id="sampleSlider">
+	<script src="/client/js/rSlider.min.js"></script>
+	<script src="/client/js/app.js"></script>
+
+</body>
+
+</html>

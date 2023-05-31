@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+	<script>
+		tinymce.init({
+			selector: 'textarea#content',
+			automatic_uploads: true,
+			images_upload_url: '/upload/image',
+			forced_root_block: false,
+			plugins: [
+				'a11ychecker', 'advlist', 'advcode', 'advtable', 'autolink', 'checklist', 'export',
+				'lists', 'link', 'image', 'charmap', 'preview', 'anchor', 'searchreplace', 'visualblocks',
+				'powerpaste', 'fullscreen', 'formatpainter', 'insertdatetime', 'media', 'table', 'help', 'wordcount'
+			],
+			toolbar: 'undo redo | formatpainter casechange blocks | bold italic backcolor | image | ' +
+				'alignleft aligncenter alignright alignjustify | ' +
+				'bullist numlist checklist outdent indent | removeformat | a11ycheck code table help'
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<nav><ul class="list">
+				<li class="list-item"><a href="/admin/blogs" class="list-link">Посты</a></li>
+			</ul></nav>
+		</div>
+	</header>
+	<form action="/api/blog" method="post" enctype="multipart/form-data">
+		<input type="file" name="preview">
+		<input type="text" name="description" placeholder="введите краткое описание главного изображения">
+		<textarea name="title" placeholder="Введите заголовок"></textarea>
+		<textarea id="content" name="content"></textarea>
+		<button type="submit">submit</button>
+	</form>
+	<div class="wrapper"></div>
+</body>
+<script>
+	const wrapper = document.querySelector('.wrapper');
+	const myfunc = (content) => {
+		return `${content}`
+	}
+	fetch('http://localhost:3000/api/blogs').then(response => response.json()).then(data => {
+		console.log(data);
+		data.map(data => {
+			wrapper.insertAdjacentHTML('beforeend', myfunc(data.content))
+		})
+		})
+</script>
+</html>

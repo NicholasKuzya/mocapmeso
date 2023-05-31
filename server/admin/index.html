@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/static/css/styles.css">
+	<title>mocapmeso | admin</title>
+	<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+	<script src="/static/scripts/tinyMce.js"></script>
+	<!--<script>
+		tinymce.init({
+			selector: 'textarea#content',
+			automatic_uploads: true,
+			images_upload_url: '/upload/image',
+			convert_urls: false,
+			forced_root_block: false,
+			plugins: [
+				'a11ychecker', 'advlist', 'advcode', 'advtable', 'autolink', 'checklist', 'export', 'pageembed',
+				'lists', 'link', 'image', 'charmap', 'preview', 'anchor', 'searchreplace', 'visualblocks',
+				'powerpaste', 'fullscreen', 'formatpainter', 'insertdatetime', 'media', 'table', 'help', 'wordcount'
+			],
+			toolbar: 'undo redo | formatpainter casechange blocks | bold italic backcolor | image | ' +
+				'pageembed alignleft aligncenter alignright alignjustify  | ' +
+				'bullist numlist checklist outdent indent | removeformat | a11ycheck code table help'
+		});
+	</script>-->
+</head>
+
+<body>
+	<header>
+		<div class="container">
+			<nav>
+				<ul class="list">
+					<li class="list-item"><a href="/admin/blogs" class="list-link">Посты</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<main>
+		<form action="/api/blog" method="post" enctype="multipart/form-data" class="admin-form">
+			<label for="file">Выберите главное изображение</label>
+			<input type="file" id="file" name="preview">
+			<input type="text" name="description" placeholder="введите краткое описание главного изображения">
+			<input type="text" name="author" placeholder="Имя автора статьи" required>
+			<textarea name="title" placeholder="Введите заголовок"></textarea>
+			<textarea id="content" name="content"></textarea>
+			<button type="submit">Добавить новый пост</button>
+		</form>
+	</main>
+</body>
+
+</html>

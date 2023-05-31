@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>admin | blog</title>
+	<link rel="stylesheet" href="/client/css/style.css">
+</head>
+
+<body>
+	<div class="preview">
+		<div class="preview-image">
+			<img src="/client/images/png/blog-preview.png" alt="">
+		</div>
+	</div>
+	<section class="blogs">
+		<div class="container">
+			<div class="blogs-wrapper">
+				<aside class="sidebar sidebar--share">
+					<button type="button" class="delete">Удалить</button>
+				</aside>
+				<!--<article class="blogs-content">
+																											<h1>Results of BLAST Premier Spring 2022 Finals</h1>
+																											<div class="blogs-container">
+																												<p>
+																													11.19 is all about buffing underpowered and underplayed comps to allow even more ways to play. Aside
+																													from
+																													that, there
+																													are some small balance changes to tighten up the meta, with some of the higher impact balance changes
+																													made
+																													during the
+																													11.18 <a href="#">Mid-Patch Update</a> last week.
+																												</p>
+																												<img src="/client/images/png/blog-albert.png" alt="">
+																												<h2>LARGE CHANGES</h2>
+																												<p>
+																													Being able to hit Skirmisher 6 at level 6 makes for a tricky balance scenario, where hitting it at level
+																													6
+																													is strong,
+																													but later in the game it can be rather weak. We see wiggle room to add power into the 6 <a
+																														href="#">Skirmisher breakpoint</a>, which
+																													will continue to be strong in the early game, but might last a bit longer into the mid game as well.
+																												</p>
+																												<p>
+																													Being able to hit Skirmisher 6 at level 6 makes for a tricky balance scenario, where hitting it at level
+																													6
+																													is strong,
+																													but later in the game it can be rather weak. We see wiggle room to add power into the 6 Skirmisher
+																													breakpoint, which
+																													will continue to be strong in the early game, but might last a bit longer into the mid game as well.
+																												</p>
+																												<blockquote>
+																													<h3>"I guess I have to say it. I'm not going to be the Alabama coach "</h3>
+																													<cite>Nick Saban</cite>
+																												</blockquote>
+																												<h2>Champions: Tier 2</h2>
+																												<ol>
+																													<li>
+																														Personal data
+																														<p>Personal data means any information that can be attributed to an identified or identifiable
+																															individual
+																															("data subject").
+																															Personal data includes all types of information that can be directly or indirectly (ie, using other
+																															data) correlated
+																															with the data subject, such as name, date of birth, address, email address, phone number, etc.
+																															Transfer of personal data
+																														</p>
+																													</li>
+																												</ol>
+																												<p>Read more:</p>
+																												<ul>
+																													<li><a href="#">These were the most popular champions in season 11</a></li>
+																												</ul>
+																											</div>
+																										</article>-->
+				<!--<aside class="sidebar sidebar--info">
+																											<div class="sidebar-wrapper">
+																												<time class="sidebar-date" pubdate="">Mar 30, 2021</time>
+																												<div class="sidebar-views"><i><img src="/client/images/icons/eyes.svg"
+																															alt="eyes icon"></i><span>3201</span></div>
+																											</div>
+																											<div class="sidebar-author">
+																												<div class="sidebar-wrapper">
+																													<div class="sidebar-author__image"></div>
+																													<div class="sidebar-author__name">Leslie Watson</div>
+																												</div>
+																											</div>
+																										</aside>-->
+				</div>
+				</div>
+				</section>
+
+</body>
+<script>
+	function getLastPart(url) {
+		const parts = url.split('/');
+		return parts.at(-1);
+	}
+	const locationUrl = window.location.href;
+					const blogsWrapper = document.querySelector('.blogs-wrapper');
+					const myfunc = (title, content, date, views, author) => {
+			return `
+				<article class="blogs-content">
+						<h1>${title}</h1>
+						<div class="blogs-container">
+							${content}
+						</div>
+					</article>
+					<aside class="sidebar sidebar--info">
+						<div class="sidebar-wrapper">
+							<time class="sidebar-date">${date}</time>
+							<div class="sidebar-views"><i><img src="/client/images/icons/eyes.svg"
+										alt="eyes icon"></i><span>${views}</span></div>
+						</div>
+						<div class="sidebar-author">
+							<div class="sidebar-wrapper">
+								<div class="sidebar-author__image"></div>
+								<div class="sidebar-author__name">${author}</div>
+							</div>
+						</div>
+					</aside>
+			`
+		}
+						fetch(`/api/blog/${getLastPart(locationUrl)}`).then(response => response.json()).then(data => {
+		data.map(data => {
+			const previewImageEl = document.querySelector('.preview-image img');
+			previewImageEl.setAttribute('src', `/static/uploads/posts/${data.preview.url}`);
+			previewImageEl.setAttribute('alt', data.preview.alt);
+			const content = data.content.normalize();
+			blogsWrapper.insertAdjacentHTML('beforeend', myfunc(data.title, content, data.date, data.views, data.author))
+		})
+	})
+	const delBtn = document.querySelector('.delete');
+	delBtn.addEventListener('click', () => {
+		fetch(`/api/blog/${getLastPart(locationUrl)}`, {
+			method: "DELETE"
+		}).then(window.location.href = '/admin/blogs')
+	})
+</script>
+
+</html>

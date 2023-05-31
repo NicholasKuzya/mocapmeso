@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/static/css/styles.css">
+	<title>Document</title>
+	<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+	<script src="/static/scripts/tinyMce.js"></script>
+</head>
+
+<body>
+	<form method="post" enctype="multipart/form-data" class="admin-form">
+		<label for="file"><img src="" alt=""> <span>Добавить новое изображение</span></label>
+		<input type="file" id="file" name="preview">
+		<label for="alt">введите краткое описание главного изображения</label>
+		<input type="text" name="description" placeholder="введите краткое описание главного изображения" id="alt">
+		<label for="title">Введите заголовок</label>
+		<textarea name="title" placeholder="Введите заголовок" id="title"></textarea>
+		<textarea id="content" name="content"></textarea>
+		<button type="submit">Обновить пост</button>
+	</form>
+	<script>
+		const form = document.querySelector('form');
+		const previewImage = form.querySelector('img');
+		const urlTitle = window.location.pathname;
+		const titleUrl = urlTitle.replace('/admin', '').replace('/edit', '');
+		form.addEventListener('submit', (e) => {
+			form.setAttribute('action', `/api/${titleUrl}/edit`)
+		});
+			fetch(`/api/${titleUrl}`).then(response => response.json()).then(data => {
+			console.log(data[0]);
+			form.title.value = data[0].title;
+			form.description.value = data[0].preview.alt;
+			form.content.value = data[0].content;
+			previewImage.setAttribute('src', `/static/uploads/posts/${data[0].preview.url}`);
+			previewImage.setAttribute('alt', data[0].preview.alt);
+		})
+	</script>
+</body>
+
+</html>
