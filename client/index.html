@@ -91,7 +91,7 @@
 							</div>
 							<div class="col">
 								<div class="home-card__computer">
-									<video src="/client/videos/home-face.webm" autoplay muted loop></video>
+									<video src="/client/videos/home-face.mp4" autoplay muted loop></video>
 								</div>
 								<div class="home-card__phone">
 									<video src="/client/videos/arnold.mp4" loop autoplay muted></video>
@@ -145,7 +145,7 @@
 		</div>
 		<div class="home-slider">
 			<div class="container">
-
+				<div class="swiper-pagination--mob"></div>
 				<div class="swiper home-swiper">
 					<!-- Additional required wrapper -->
 					<div class="swiper-wrapper">
@@ -171,7 +171,7 @@
 											<div class="swiper-slide">
 												<div class="home-slide">
 													<div class="video">
-									<img src="/client/images/png/home-polina.png" loading="lazy" alt="Фото актрисы">
+									<img src="/client/images/png/polya_crutitsya.png" loading="lazy" alt="Фото актрисы">
 									</div>
 									<div class="wrapper">
 										<div class="col">
@@ -189,7 +189,7 @@
 											<div class="swiper-slide">
 												<div class="home-slide home-slide--stock">
 													<div class="video">
-									<img src="/client/images/png/home-men.png" loading="lazy" alt="Фото актера с мечом">
+									<img src="/client/images/png/leo_mech.png" loading="lazy" alt="Фото актера с мечом">
 									</div>
 									<div class="wrapper">
 										<div class="col">
@@ -225,7 +225,6 @@
 										</clipPath>
 									</defs>
 								</svg>
-					<!--<img src="/client/videos/home-help.gif" alt="анимация персонажей">-->
 					<video src="/client/videos/jugg_1.mp4" muted loop autoplay></video>
 					</div>
 					<div class="home-help__btn">
@@ -429,9 +428,9 @@
 							</ul>
 							</address>
 							<div class="contact-input">
-								<input class="input" type="text" placeholder="Ваше имя">
-								<input class="input" type="text" placeholder="Ваш email">
-								<input class="input" type="text" placeholder="Номер телефона">
+								<input class="input" type="text" placeholder="Ваше имя" required name="name">
+								<input class="input" type="email" placeholder="Ваш email" required name="email">
+								<input class="input" type="number" placeholder="Номер телефона" required name="pass">
 								<div>
 							<button class="btn btn-violet contact-btn">отправить</button>
 							<span>Мы с вами свяжемся <br>

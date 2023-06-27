@@ -39,6 +39,12 @@
 		&-btn {
 			margin-top: 85px;
 			margin-right: 47px;
+			.button {
+				width: 103%;
+			}
+			.btn-gray__wrapper {
+				flex-basis: auto;
+			}
 		}
 	}
 

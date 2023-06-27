@@ -117,9 +117,10 @@
 		}
 		// .chaaracter-btn
 		&-btn {
-			.button {
-				justify-content: start;
-			}
+				.button {
+					width: 55%;
+					justify-content: space-between;
+				}
 			.btn-gray__wrapper {
 				flex-basis: auto;
 			}
@@ -924,12 +925,21 @@
 			&-btn {
 				.button {
 					display: block;
+					width: 100%;
 					.btn-gray {
-						width: 100%;
+						width: 94%;
 						padding: 15px 10px;
+						max-width: 100%;
+						font-size: 17px !important;
 						&__wrapper {
 							display: block;
 							padding: 0;
+							&:hover {
+								width: 100%;
+								.btn-gray {
+									max-width: 94%;
+								}
+							}
 						}
 					}
 				}

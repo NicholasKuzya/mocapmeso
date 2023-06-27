@@ -27,3 +27,31 @@
 		}
 	}
 }
+
+@media (max-width: 992px) {
+	.breadcrumbs {
+		// .breadcrumbs-list
+		&-list {
+			// .breadcrumbs-list__link
+			&__link {
+				font-size: 18px;
+			}
+		}
+	}
+}
+@media (max-width: 768px) {
+	.breadcrumbs {
+		// .breadcrumbs-list
+		&-list {
+			// .breadcrumbs-list__link
+			&__link {
+				font-size: 14px;
+			}
+		}
+	}
+}
+@media (max-width: 576px) {
+	.breadcrumbs {
+		display: none;
+	}
+}

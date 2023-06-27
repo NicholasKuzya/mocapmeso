@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,12 +24,15 @@
 		});
 	</script>
 </head>
+
 <body>
 	<header>
 		<div class="container">
-			<nav><ul class="list">
-				<li class="list-item"><a href="/admin/blogs" class="list-link">Посты</a></li>
-			</ul></nav>
+			<nav>
+				<ul class="list">
+					<li class="list-item"><a href="/admin/blogs" class="list-link">Посты</a></li>
+				</ul>
+				</nav>
 		</div>
 	</header>
 	<form action="/api/blog" method="post" enctype="multipart/form-data">
@@ -45,11 +49,12 @@
 	const myfunc = (content) => {
 		return `${content}`
 	}
-	fetch('http://localhost:3000/api/blogs').then(response => response.json()).then(data => {
+		fetch('/api/blogs').then(response => response.json()).then(data => {
 		console.log(data);
 		data.map(data => {
 			wrapper.insertAdjacentHTML('beforeend', myfunc(data.content))
 		})
-		})
+	})
 </script>
+
 </html>

@@ -47,7 +47,6 @@
 		}
 
 		li {
-
 			h2,
 			h3,
 			h4,
@@ -266,7 +265,6 @@
 }
 
 .blog {
-
 	//.blog-btn
 	&-btn {
 		display: flex;
@@ -283,7 +281,7 @@
 			background-color: #ffffff;
 			border: 3px solid rgba(0, 0, 0, 1);
 			padding: 10px 15px;
-			
+
 			&.swiper-button-disabled {
 				background-color: #838386;
 			}
@@ -301,7 +299,7 @@
 
 		.swiper-slide {
 			position: relative;
-			display: block;			
+			display: block;
 
 			div {
 				display: flex;
@@ -360,7 +358,136 @@
 				bottom: 150px;
 				left: 15px;
 				text-transform: capitalize;
+			}
+		}
+	}
+}
 
+@media (max-width: 576px) {
+	.preview {
+		// .preview-image
+		&-image {
+			height: 115px;
+		}
+	}
+	.blogs {
+		div:has(ul) {
+			padding-top: 30px;
+		}
+		// .blogs-wrapper
+		&-wrapper {
+			flex-direction: column;
+			padding-top: 0 !important;
+		}
+		.container {
+			padding-top: 0 !important;
+		}
+		// .blogs-content
+		&-content {
+			order: 2;
+			flex: 100%;
+			h1 {
+				font-size: 34px;
+				line-height: 42px;
+				margin-top: 27px;
+			}
+			h2,
+			h3,
+			h4,
+			h5,
+			h6,
+			p,
+			ol,
+			ul {
+				padding-left: 0;
+			}
+			p {
+				font-size: 16px;
+				line-height: 22px;
+				margin: 20px 0;
+			}
+			ul li {
+				font-size: 16px;
+				line-height: 19px;
+			}
+		}
+		// .blogs-container
+		&-container {
+			padding-top: 0 !important;
+		}
+		blockquote {
+			padding: 20px 15px;
+			h3 {
+				font-size: 22px;
+				line-height: 26px;
+			}
+			cite {
+				font-size: 14px;
+				line-height: 16px;
+			}
+		}
+	}
+	.sidebar {
+		// .sidebar--info
+		&--info {
+			order: 1;
+			flex: 100%;
+		}
+		// .sidebar--share
+		&--share {
+			order: 3;
+			flex: 100%;
+		}
+		// .sidebar-wrapper
+		&-wrapper {
+			font-size: 12px;
+			line-height: 14px;
+		}
+		// .sidebar-author
+		&-author {
+			margin-top: 10px;
+			// .sidebar-author__image
+			&__image {
+				width: 20px;
+				height: 20px;
+			}
+			// .sidebar-author__name
+			&__name {
+				font-size: 14px;
+				line-height: 16px;
+			}
+		}
+		// .sidebar-list
+		&-list {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-top: 45px;
+		}
+	}
+	.tabs {
+		padding-top: 65px;
+		// .tabs-btn
+		&-btn {
+			// .tabs-btn__link
+			&__link {
+				font-size: 13px;
+				line-height: 16px;
+				margin-right: 20px;
+			}
+		}
+	}
+	.blog {
+		// .blog-swiper
+		&-swiper {
+			// .blog-swiper__btn
+			&__btn {
+				padding: 5px 10px;
+				i {
+					display: inline-block;
+					width: 5px;
+					height: 10px;
+				}
 			}
 		}
 	}

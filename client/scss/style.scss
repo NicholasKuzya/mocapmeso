@@ -14,6 +14,16 @@
 	margin: 0;
 	padding: 0;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
 video {
 	width: 100%;
 	height: 100%;
@@ -85,7 +95,8 @@ p {
 .home {
 	// .home-baner
 	&-baner {
-		background-image: url("../images/png/home-bg.png");
+		//background-image: url("../images/png/home-bg.png");
+		background-image: url("../images/png/leo_zver.png");
 		margin-top: -10px;
 		background-size: 1050px 1060px;
 		position: relative;
@@ -95,13 +106,13 @@ p {
 		&::after {
 			content: "";
 			position: absolute;
-			right: 150px;
+			right: 0px;
 			bottom: -100px;
-			width: 800px;
-			height: 200px;
+			width: 1200px;
+			height: 300px;
 			border-radius: 100%;
 			background: #06040e;
-			filter: blur(75px);
+			filter: blur(60px);
 		}
 		// .home-baner__text
 		&__text {
@@ -119,14 +130,26 @@ p {
 		}
 		.btn-group {
 			margin-top: 55px;
+			position: relative;
 			.btn {
 				display: inline-block;
 				// .btn-gray
 				&-gray {
 					font-weight: 700;
-					padding: 28px 50px;
+					padding: 24px 50px;
 					font-size: 20px;
 					line-height: 24px;
+					// .btn-gray__wrapper
+					&__wrapper {
+						position: absolute;
+						top: -6px;
+						&:hover {
+							top: 0;
+							.btn-gray {
+								padding: 19px 50px;
+							}
+						}
+					}
 				}
 			}
 		}
@@ -269,14 +292,15 @@ p {
 	}
 	// .home-swiper
 	&-swiper {
+		.swiper-wrapper {
+			padding-bottom: 50px;
+			padding-top: 10px;
+		}
 		.swiper-slide {
 			margin-top: 45px;
 			height: -webkit-max-content !important;
 			height: -moz-max-content !important;
 			height: max-content !important;
-		}
-		.swiper-slide-active {
-			margin-top: 45px;
 			&::after,
 			&::before {
 				width: 96%;
@@ -295,6 +319,9 @@ p {
 				width: 94%;
 				background-color: #34007b;
 			}
+		}
+		.swiper-slide-active {
+			margin-top: 45px;
 		}
 		.swiper-pagination {
 			position: absolute;
@@ -376,7 +403,7 @@ p {
 				top: 0;
 				left: 60%;
 				img {
-					width: 75%;
+					width: 74%;
 					height: 100%;
 				}
 			}
@@ -725,6 +752,7 @@ p {
 			&::after {
 				width: 550px;
 				right: 0;
+				height: 200px;
 			}
 			// .home-baner__text
 			&__text {
@@ -808,7 +836,7 @@ p {
 		}
 		// .home-swiper
 		&-swiper {
-			.swiper-slide-active {
+			.swiper-slide {
 				&::before {
 					top: -40px;
 				}
@@ -961,7 +989,7 @@ p {
 					}
 					// .btn-gray
 					&-gray {
-						padding: 15px 20px;
+						padding: 10px 20px;
 					}
 				}
 			}
@@ -1021,7 +1049,14 @@ p {
 		}
 		// .home-swiper
 		&-swiper {
-			.swiper-slide-active {
+			// .swiper-wrapper
+			.swiper-wrapper {
+				padding-top: 36px;
+			}
+			.swiper-slide {
+				margin-top: 0;
+			}
+			.swiper-slide {
 				&::before {
 					top: -35px;
 				}
@@ -1194,8 +1229,8 @@ p {
 				&-wrapper {
 					padding-top: 30px;
 				}
-				// .swiper-slide-active
-				&-slide-active {
+				// .swiper-slide
+				&-slide {
 					margin-top: 0;
 					&::before {
 						top: -30px;
@@ -1288,6 +1323,7 @@ p {
 				}
 				.btn-gray__wrapper {
 					margin-top: 15px;
+					position: static;
 				}
 				button {
 					width: 100%;
@@ -1423,21 +1459,44 @@ p {
 		}
 		// .home-swiper
 		&-swiper {
-			.swiper-slide-active {
+			.swiper-slide {
+				//opacity: 0 !important;
+				//	opacity: 1 !important;
+				&::before {
+					top: -25px;
+				}
 				&::after {
 					height: 55px;
 				}
 			}
+		}
+		// .home-slider
+		&-slider {
 			.swiper-pagination {
-				position: absolute;
-				top: 80px !important;
-				right: 10px !important;
 				// .swiper-pagination-bullet
 				&-bullet {
-					padding: 5px;
+					padding: 9px;
 					padding-right: 10px;
 					font-size: 10px;
 					margin-top: 5px !important;
+					margin-bottom: 30px !important;
+					width: auto;
+					height: auto;
+					background-color: transparent;
+					color: #fff;
+					border-radius: 52px;
+					font-weight: 500;
+					display: inline-block;
+					border: 1px solid rgba(255, 255, 255, 0.15);
+					opacity: 1 !important;
+					&:not(:first-child) {
+						margin-left: 10px !important;
+					}
+					&-active {
+						background-color: #fff;
+						border: none;
+						color: #000;
+					}
 				}
 			}
 		}
@@ -1543,6 +1602,7 @@ p {
 					&__wrapper {
 						width: 100%;
 						text-align: center;
+						top: -45px;
 					}
 				}
 			}

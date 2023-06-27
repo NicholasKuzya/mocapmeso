@@ -447,6 +447,9 @@
 		.input {
 			padding: 23px 30px;
 			margin-bottom: 20px;
+			&.error {
+				border: 1px solid red;
+			}
 		}
 
 		div {
@@ -1210,9 +1213,11 @@
 				.btn-gray {
 					max-width: 100%;
 					padding: 15px 10px;
+					width: 94%;
 					&__wrapper {
 						display: block;
 						padding: 0;
+						width: 100%;
 						span {
 							font-size: 17px;
 						}

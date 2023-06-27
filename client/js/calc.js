@@ -85,72 +85,85 @@ popupBtns.forEach(popupBtn => {
 const btnContact = document.querySelector('.contact-btn');
 const inputsContact = document.querySelectorAll('.contact-input .input');
 btnContact.addEventListener('click', async () => {
-	const data = {
-		making: String,
-		bodyPart: String,
-		facePart: String,
-		retarget: String,
-		totalHours: Number,
-		name: String,
-		email: String,
-		phone: Number
-	}
-	popup.classList.add('open')
-	radioBtns.forEach((radioBtn, index) => {
-		if (index === 0 || index === 1) {
-			const radioText = radioBtn.closest('label').textContent.trim()
-			if (radioBtn.checked) {
-				data.making = radioText
-				console.log(radioText)
-			}
-		}
-		if (index === 2) {
-			const radioText = radioBtn.closest('label').textContent.trim()
-			if (radioBtn.checked) {
-				data.bodyPart = radioText
-			}
-		}
-		if (index === 3) {
-			const radioText = radioBtn.closest('label').textContent.trim()
-			if (radioBtn.checked) {
-				data.facePart = radioText
-				console.log(radioText)
-			}
-		}
+	if (inputsContact[1].value.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
 
-		if (index === 4) {
-			const radioText = radioBtn.closest('label').textContent.trim()
-			if (radioBtn.checked) {
-				data.retarget = radioText
+		const data = {
+			making: String,
+			bodyPart: String,
+			facePart: String,
+			retarget: String,
+			totalHours: Number,
+			name: String,
+			email: String,
+			phone: Number
+		}
+		popup.classList.add('open')
+		radioBtns.forEach((radioBtn, index) => {
+			if (index === 0 || index === 1) {
+				const radioText = radioBtn.closest('label').textContent.trim()
+				if (radioBtn.checked) {
+					data.making = radioText
+					console.log(radioText)
+				}
 			}
-		}
-		data.totalHours = mySlider.getValue()
-	})
-	inputsContact.forEach((input, index) => {
-		if (index === 0) {
-			data.name = input.value
-		}
-		if (index === 1) {
-			data.email = input.value
-		}
-		if (index === 2) {
-			data.phone = input.value
-		}
-	})
-	console.log(popup)
-	console.log(data)
-	let response = await fetch('/application', {
-		method: "POST", // or 'PUT'
-		headers: {
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify(data),
-	});
+			if (index === 2) {
+				const radioText = radioBtn.closest('label').textContent.trim()
+				if (radioBtn.checked) {
+					data.bodyPart = radioText
+				}
+			}
+			if (index === 3) {
+				const radioText = radioBtn.closest('label').textContent.trim()
+				if (radioBtn.checked) {
+					data.facePart = radioText
+					console.log(radioText)
+				}
+			}
 
-	if (response.ok) { // если HTTP-статус в диапазоне 200-299
-		// получаем тело ответа (см. про этот метод ниже)
-		return json = await response.json();
+			if (index === 4) {
+				const radioText = radioBtn.closest('label').textContent.trim()
+				if (radioBtn.checked) {
+					data.retarget = radioText
+				}
+			}
+			data.totalHours = mySlider.getValue()
+		})
+		inputsContact.forEach((input, index) => {
+			if (index === 0) {
+				data.name = input.value
+			}
+			if (index === 1) {
+				data.email = input.value
+			}
+			if (index === 2) {
+				data.phone = input.value
+			}
+		})
+		inputsContact[0].setAttribute('placeholder', 'Ваше имя')
+		inputsContact[1].setAttribute('placeholder', 'Ваш email')
+		inputsContact[2].setAttribute('placeholder', 'Номер телефона')
+		inputsContact[0].classList.remove('error')
+		inputsContact[1].classList.remove('error')
+		inputsContact[2].classList.remove('error')
+		console.log(popup)
+		console.log(data)
+		let response = await fetch('/application', {
+			method: "POST", // or 'PUT'
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(data),
+		});
+		if (response.ok) { // если HTTP-статус в диапазоне 200-299
+			// получаем тело ответа (см. про этот метод ниже)
+			return json = await response.json();
+		} else {
+			alert("Ошибка HTTP: " + response.status);
+		}
 	} else {
-		alert("Ошибка HTTP: " + response.status);
+		inputsContact.forEach((input, index) => {
+			input.setAttribute('placeholder', 'Введи данные верно')
+			input.classList.add('error')
+		})
 	}
 })

@@ -28,6 +28,9 @@ if (widthDoc > 767) {
 else {
 	widthSlider = 260;
 }
+setInterval(function () {
+
+}, 200);
 const mySlider = new rSlider({
 	target: '#sampleSlider',
 	values: [1, 2, 3, 4, 5, 6],
@@ -38,15 +41,18 @@ const mySlider = new rSlider({
 	labels: true,
 	onChange: function (vals) {
 		myFunc(parseFloat(vals));
-		const rSliderScaleSpan = document.querySelector('.rs-scale').querySelectorAll('span');
 		const rangePointer = document.querySelector('.rs-pointer');
-		let slideValue = mySlider.getValue()
-		for (let i = 0; slideValue > i; i++) {
-			rSliderScaleSpan[i].classList.add('bg')
-		}
-		for (let i = 5; slideValue <= i; i--) {
-			rSliderScaleSpan[i].classList.remove('bg')
-		}
+		setInterval(function () {
+			const rSliderScaleSpan = document.querySelector('.rs-scale').querySelectorAll('span');
+			let slideValue = mySlider.getValue()
+			for (let i = 0; slideValue > i; i++) {
+				rSliderScaleSpan[i].classList.add('bg')
+			}
+			for (let i = 5; slideValue <= i; i--) {
+				rSliderScaleSpan[i].classList.remove('bg')
+			}
+		}, 1);
+
 		if (sampleSlider.value == 1) {
 			rangePointer.style.left = '-9px'
 		} else {
@@ -56,38 +62,6 @@ const mySlider = new rSlider({
 			}
 			rangePointer.style.left = `${res}px`
 		}
-		//let width = rSliderSelected.offsetWidth
-		//while (width <= (widthSlider / 5) - 1) {
-		//	rSliderScaleSpan[0].classList.remove('bg')
-		//	break
-		//} while (width <= (widthSlider / 2.5) - 1) {
-		//	rSliderScaleSpan[1].classList.remove('bg')
-		//	break
-		//} while (width <= (widthSlider / 1.66) - 1) {
-		//	rSliderScaleSpan[2].classList.remove('bg')
-		//	break
-		//} while (width <= (widthSlider / 1.25) - 1) {
-		//	rSliderScaleSpan[3].classList.remove('bg')
-		//	break
-		//} while (width <= widthSlider) {
-		//	rSliderScaleSpan[4].classList.remove('bg')
-		//	break
-		//} while (width >= (widthSlider / 5) - 1) {
-		//	rSliderScaleSpan[0].classList.add('bg')
-		//	break
-		//} while (width >= (widthSlider / 2.5) - 1) {
-		//	rSliderScaleSpan[1].classList.add('bg')
-		//	break
-		//} while (width >= (widthSlider / 1.66) - 1) {
-		//	rSliderScaleSpan[2].classList.add('bg')
-		//	break
-		//} while (width >= (widthSlider / 1.25) - 1) {
-		//	rSliderScaleSpan[3].classList.add('bg')
-		//	break
-		//} while (width >= widthSlider) {
-		//	rSliderScaleSpan[4].classList.add('bg')
-		//	break
-		//}
 	}
 });
 if (sampleSlider) {
